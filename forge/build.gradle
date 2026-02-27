@@ -3,7 +3,12 @@ plugins {
 }
 
 loom {
+    accessWidenerPath = project(":common").loom.accessWidenerPath
+
     forge {
+        convertAccessWideners = true
+        extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
+
         mixinConfig "velthoric.mixins.json", "vx-events.mixins.json"
     }
 
@@ -16,8 +21,6 @@ loom {
             programArgs '--username', 'dev'
         }
     }
-
-    accessWidenerPath = project(":common").loom.accessWidenerPath
 }
 
 architectury {

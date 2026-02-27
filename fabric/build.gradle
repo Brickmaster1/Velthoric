@@ -8,6 +8,8 @@ architectury {
 }
 
 loom {
+    accessWidenerPath = project(":common").loom.accessWidenerPath
+
     runs {
         server {
             runDir "run-server"
@@ -18,8 +20,6 @@ loom {
             //vmArg "-Dfabric.log.level=debug"
         }
     }
-
-    accessWidenerPath = project(":common").loom.accessWidenerPath
 }
 
 
